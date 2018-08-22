@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <img src="/assets/images/burger.jpg" class="img-thumbnail" alt="Responsive image">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <h1>Eat-Da-Burger!</h1>
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+            {{#each burger}} {{#unless devoured}}
+            <div class="row justify-content-start">
+                <div class="col-6">
+                    <p>{{this.id}}.
+                        <span>{{this.name}}</span>
+                    </p>
+                </div>
+                <div class="col-6">
+                    <button type="submit" class="btn btn-danger devoured" data-id="{{this.id}}" data-status="true">Devoured</button>
+                </div>
+            </div>
+            {{/unless}} {{/each}}
+        </div>
+
+        <div class="col-6">
+            {{#each burger}} {{#if devoured}}
+            <div class="row justify-content-start">
+                <div class="col">
+                    <p>{{this.id}}.
+                        <span>{{this.name}}</span>
+                    </p>
+                </div>
+
+            </div>
+            {{/if}} {{/each}}
+        </div>
+
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <form class="addBurger">
+                <div class="form-group">
+                    <label for="Burger"></label>
+                    <textarea class="form-control" id="burgerToeat" name="burger_name" rows="3"></textarea>
+                </div>
+                <div class="row justify-content-center">
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <p>Click the "Submit" on the burger yuo would like.</p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
